@@ -15,3 +15,10 @@ int main(void) {
 }
 #+END_SRC
 
+#+BEGIN_SRC python
+  def main():
+      i = 5
+      for y in i:
+          print(i)
+#+END_SRC
+
