@@ -1,5 +1,4 @@
 #+TITLE: petricore
-#+OPTIONS: toc:nil
 
 * Notes
 ** [[id:d6890f70-ff63-4be5-85df-0b05edbf6b74][Starlink Security Posture]]
