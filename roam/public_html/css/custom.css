@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'FiraCode Nerd Font';
+    src: url('../fonts/FiraCodeNerdFont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FiraCode Nerd Font';
+    src: url('../fonts/FiraCodeNerdFont-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'FiraCode Nerd Font', monospace;
+}
+
+pre, code {
+    font-family: 'FiraCode Nerd Font', monospace;
+    font-feature-settings: 'calt' 1;
+}
