@@ -1,0 +1,127 @@
+:PROPERTIES:
+:ID:       8f054cea-0425-4a98-bf1b-d5bb60bd9e12
+:END:
+#+title: World File
+
+Programs explicitly emerged via portage.
+
+Stored at /var/lib/portage/world
+
+* app-admin/sudo
+- Allows root commands for non-root users.
+
+* app-editors/emacs
+- GUI client for editing; pseudo-IDE/Obsidian note-taker.
+
+* app-editors/vim
+- TUI app for general text-editing.
+
+* app-emulation/qemu
+- Primary virtualization suite.
+
+* app-emulation/spice
+- Current backend for interacting with VMs that do not have GPU passthrough.
+
+* app-emulation/virt-viewer
+- Current frontend for interacting with VMs that do not have GPU passthrough.
+
+* app-eselect/eselect-repository
+- Helper for eselecting new repositories. Allows repositories to be synced via Git.
+
+* app-misc/neofetch
+- Primarily used for screenshots showing off specs, also useful for listing # of packages.
+
+* app-shells/zsh
+- Personally preferred shell over bash. IDK why, honestly.
+
+* gui-apps/hyprpaper
+- Repository: Guru
+- Wallpaper management for Hyprland.
+
+* gui-apps/wofi
+- Program launcher for Hyprland.
+
+* gui-wm/hyprland
+- WM for Wayland.
+
+* media-libs/alsa-lib
+- Kernel libraries for Pipewire.
+
+* media-libs/libsamplerate
+- Pipewire-backend library for building looking-glass.
+
+* media-libs/mesa
+- Vulkan drivers, I guess?
+
+* media-libs/vulkan-loader
+- No idea, may not be required.
+
+* media-video/pipewire
+- Audio/Video backend for sources/sinks.
+
+* media-video/wireplumber
+- Pipewire management suite.
+
+* net-misc/aria2
+- Alternative to wget. Can be used for torrents as well as general download speed saturation.
+
+* net-misc/chrony
+- NTP daemon to fix any clock shift.
+
+* net-misc/dhcpcd
+- DHCP daemon.
+
+* net-misc/spice-gtk
+- IDK why this was required with spice, maybe look into this.
+
+* net-wireless/iwd
+- Simple WPA2/3 authentication client - aka wifi daemon.
+
+* sys-apps/pciutils
+- For lspci and general pci debugging. Useful for VFIO groups.
+
+* sys-apps/usbutils
+- For lsusb and general usb debugging. Useful for usb passthrough.
+
+* sys-apps/xdg-desktop-portal
+- Apparently needed for Wayland audio.
+
+* sys-apps/xdg-desktop-portal-gtk
+- Apparently needed for Wayland audio.
+
+* sys-auth/seatd
+- Seat protocol daemon; alternative to elogind/logind. Very basic. Requires creation of run files by boot script.
+
+* sys-block/io-scheduler-udev-rules
+- Apparently reccomended for m.2 drives.
+
+* sys-boot/grub
+- Boot manager.
+
+* sys-firmware/intel-microcode
+- Microcode updates for Intel chips. Should be pulled into kernel by sys-kernel/installkernel.
+
+* sys-firmware/sof-firmware
+- Boutique/esoteric firmware, I believe. Emerged while trying to get pipewire to work.
+
+* sys-fs/dosfstools
+- Support for vFAT FS.
+
+* sys-kernel/gentoo-sources
+- Raw gentoo kernel sources.
+
+* sys-kernel/installkernel
+- Adds `make install` script for gentoo sources. Configs grub and intel-microcode.
+
+* sys-kernel/linux-firmware
+- General firmware bundle.
+
+* virtual/opengl
+- Needed for libGL.so for compiling looking-glass.
+
+* x11-libs/libdrm
+- Probably looking-glass, IDK.
+
+* x11-terms/kitty
+- Decent terminal emulator, open to change.
+

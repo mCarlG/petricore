@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       7e6002a1-bcad-408d-9811-011d4231d033
+:END:
+#+title: Secure Boot Protections
+#+tags: :wip:reference:
+
+Methods:
+dm-verity
+LUKS
+Trusted Execution Environment (TEE)

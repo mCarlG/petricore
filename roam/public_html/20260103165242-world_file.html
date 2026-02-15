@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-02-15 Sun 14:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>World File</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="/"> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">World File</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge3a0c7d">1. app-admin/sudo</a></li>
+<li><a href="#org66a50f9">2. app-editors/emacs</a></li>
+<li><a href="#org339da23">3. app-editors/vim</a></li>
+<li><a href="#org2d2e9e8">4. app-emulation/qemu</a></li>
+<li><a href="#orga552310">5. app-emulation/spice</a></li>
+<li><a href="#org2e8f76e">6. app-emulation/virt-viewer</a></li>
+<li><a href="#org8ffed8d">7. app-eselect/eselect-repository</a></li>
+<li><a href="#org2176a8f">8. app-misc/neofetch</a></li>
+<li><a href="#orgfd07c89">9. app-shells/zsh</a></li>
+<li><a href="#org7694a5a">10. gui-apps/hyprpaper</a></li>
+<li><a href="#orgccc62d9">11. gui-apps/wofi</a></li>
+<li><a href="#org34b435d">12. gui-wm/hyprland</a></li>
+<li><a href="#orgb99ecdd">13. media-libs/alsa-lib</a></li>
+<li><a href="#org8cca84d">14. media-libs/libsamplerate</a></li>
+<li><a href="#orgdd5cc9f">15. media-libs/mesa</a></li>
+<li><a href="#orge9d34ec">16. media-libs/vulkan-loader</a></li>
+<li><a href="#orgc5e5c36">17. media-video/pipewire</a></li>
+<li><a href="#org65b3eeb">18. media-video/wireplumber</a></li>
+<li><a href="#orgaa6a506">19. net-misc/aria2</a></li>
+<li><a href="#org6f89882">20. net-misc/chrony</a></li>
+<li><a href="#org81c7e86">21. net-misc/dhcpcd</a></li>
+<li><a href="#org05b1316">22. net-misc/spice-gtk</a></li>
+<li><a href="#orgdb923f2">23. net-wireless/iwd</a></li>
+<li><a href="#org22ea177">24. sys-apps/pciutils</a></li>
+<li><a href="#org9818d58">25. sys-apps/usbutils</a></li>
+<li><a href="#orgd417b01">26. sys-apps/xdg-desktop-portal</a></li>
+<li><a href="#org7d3e7b8">27. sys-apps/xdg-desktop-portal-gtk</a></li>
+<li><a href="#orgc0b48ed">28. sys-auth/seatd</a></li>
+<li><a href="#org8c30c40">29. sys-block/io-scheduler-udev-rules</a></li>
+<li><a href="#org8b1f59c">30. sys-boot/grub</a></li>
+<li><a href="#orgd1fa9fd">31. sys-firmware/intel-microcode</a></li>
+<li><a href="#org87099ff">32. sys-firmware/sof-firmware</a></li>
+<li><a href="#org481e4bd">33. sys-fs/dosfstools</a></li>
+<li><a href="#orgc9a8d3e">34. sys-kernel/gentoo-sources</a></li>
+<li><a href="#orga6925cf">35. sys-kernel/installkernel</a></li>
+<li><a href="#org27f4160">36. sys-kernel/linux-firmware</a></li>
+<li><a href="#orga269ec4">37. virtual/opengl</a></li>
+<li><a href="#org2ae286b">38. x11-libs/libdrm</a></li>
+<li><a href="#org5ce551e">39. x11-terms/kitty</a></li>
+</ul>
+</div>
+</div>
+<p>
+Programs explicitly emerged via portage.
+</p>
+
+<p>
+Stored at /var/lib/portage/world
+</p>
+<div id="outline-container-orge3a0c7d" class="outline-2">
+<h2 id="orge3a0c7d"><span class="section-number-2">1.</span> app-admin/sudo</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Allows root commands for non-root users.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org66a50f9" class="outline-2">
+<h2 id="org66a50f9"><span class="section-number-2">2.</span> app-editors/emacs</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>GUI client for editing; pseudo-IDE/Obsidian note-taker.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org339da23" class="outline-2">
+<h2 id="org339da23"><span class="section-number-2">3.</span> app-editors/vim</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>TUI app for general text-editing.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d2e9e8" class="outline-2">
+<h2 id="org2d2e9e8"><span class="section-number-2">4.</span> app-emulation/qemu</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>Primary virtualization suite.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga552310" class="outline-2">
+<h2 id="orga552310"><span class="section-number-2">5.</span> app-emulation/spice</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>Current backend for interacting with VMs that do not have GPU passthrough.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2e8f76e" class="outline-2">
+<h2 id="org2e8f76e"><span class="section-number-2">6.</span> app-emulation/virt-viewer</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Current frontend for interacting with VMs that do not have GPU passthrough.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8ffed8d" class="outline-2">
+<h2 id="org8ffed8d"><span class="section-number-2">7.</span> app-eselect/eselect-repository</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Helper for eselecting new repositories. Allows repositories to be synced via Git.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2176a8f" class="outline-2">
+<h2 id="org2176a8f"><span class="section-number-2">8.</span> app-misc/neofetch</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Primarily used for screenshots showing off specs, also useful for listing # of packages.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd07c89" class="outline-2">
+<h2 id="orgfd07c89"><span class="section-number-2">9.</span> app-shells/zsh</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li>Personally preferred shell over bash. IDK why, honestly.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7694a5a" class="outline-2">
+<h2 id="org7694a5a"><span class="section-number-2">10.</span> gui-apps/hyprpaper</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
+<li>Repository: Guru</li>
+<li>Wallpaper management for Hyprland.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgccc62d9" class="outline-2">
+<h2 id="orgccc62d9"><span class="section-number-2">11.</span> gui-apps/wofi</h2>
+<div class="outline-text-2" id="text-11">
+<ul class="org-ul">
+<li>Program launcher for Hyprland.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org34b435d" class="outline-2">
+<h2 id="org34b435d"><span class="section-number-2">12.</span> gui-wm/hyprland</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>WM for Wayland.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb99ecdd" class="outline-2">
+<h2 id="orgb99ecdd"><span class="section-number-2">13.</span> media-libs/alsa-lib</h2>
+<div class="outline-text-2" id="text-13">
+<ul class="org-ul">
+<li>Kernel libraries for Pipewire.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8cca84d" class="outline-2">
+<h2 id="org8cca84d"><span class="section-number-2">14.</span> media-libs/libsamplerate</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>Pipewire-backend library for building looking-glass.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdd5cc9f" class="outline-2">
+<h2 id="orgdd5cc9f"><span class="section-number-2">15.</span> media-libs/mesa</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>Vulkan drivers, I guess?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge9d34ec" class="outline-2">
+<h2 id="orge9d34ec"><span class="section-number-2">16.</span> media-libs/vulkan-loader</h2>
+<div class="outline-text-2" id="text-16">
+<ul class="org-ul">
+<li>No idea, may not be required.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc5e5c36" class="outline-2">
+<h2 id="orgc5e5c36"><span class="section-number-2">17.</span> media-video/pipewire</h2>
+<div class="outline-text-2" id="text-17">
+<ul class="org-ul">
+<li>Audio/Video backend for sources/sinks.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org65b3eeb" class="outline-2">
+<h2 id="org65b3eeb"><span class="section-number-2">18.</span> media-video/wireplumber</h2>
+<div class="outline-text-2" id="text-18">
+<ul class="org-ul">
+<li>Pipewire management suite.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaa6a506" class="outline-2">
+<h2 id="orgaa6a506"><span class="section-number-2">19.</span> net-misc/aria2</h2>
+<div class="outline-text-2" id="text-19">
+<ul class="org-ul">
+<li>Alternative to wget. Can be used for torrents as well as general download speed saturation.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6f89882" class="outline-2">
+<h2 id="org6f89882"><span class="section-number-2">20.</span> net-misc/chrony</h2>
+<div class="outline-text-2" id="text-20">
+<ul class="org-ul">
+<li>NTP daemon to fix any clock shift.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81c7e86" class="outline-2">
+<h2 id="org81c7e86"><span class="section-number-2">21.</span> net-misc/dhcpcd</h2>
+<div class="outline-text-2" id="text-21">
+<ul class="org-ul">
+<li>DHCP daemon.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org05b1316" class="outline-2">
+<h2 id="org05b1316"><span class="section-number-2">22.</span> net-misc/spice-gtk</h2>
+<div class="outline-text-2" id="text-22">
+<ul class="org-ul">
+<li>IDK why this was required with spice, maybe look into this.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb923f2" class="outline-2">
+<h2 id="orgdb923f2"><span class="section-number-2">23.</span> net-wireless/iwd</h2>
+<div class="outline-text-2" id="text-23">
+<ul class="org-ul">
+<li>Simple WPA2/3 authentication client - aka wifi daemon.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org22ea177" class="outline-2">
+<h2 id="org22ea177"><span class="section-number-2">24.</span> sys-apps/pciutils</h2>
+<div class="outline-text-2" id="text-24">
+<ul class="org-ul">
+<li>For lspci and general pci debugging. Useful for VFIO groups.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9818d58" class="outline-2">
+<h2 id="org9818d58"><span class="section-number-2">25.</span> sys-apps/usbutils</h2>
+<div class="outline-text-2" id="text-25">
+<ul class="org-ul">
+<li>For lsusb and general usb debugging. Useful for usb passthrough.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd417b01" class="outline-2">
+<h2 id="orgd417b01"><span class="section-number-2">26.</span> sys-apps/xdg-desktop-portal</h2>
+<div class="outline-text-2" id="text-26">
+<ul class="org-ul">
+<li>Apparently needed for Wayland audio.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7d3e7b8" class="outline-2">
+<h2 id="org7d3e7b8"><span class="section-number-2">27.</span> sys-apps/xdg-desktop-portal-gtk</h2>
+<div class="outline-text-2" id="text-27">
+<ul class="org-ul">
+<li>Apparently needed for Wayland audio.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc0b48ed" class="outline-2">
+<h2 id="orgc0b48ed"><span class="section-number-2">28.</span> sys-auth/seatd</h2>
+<div class="outline-text-2" id="text-28">
+<ul class="org-ul">
+<li>Seat protocol daemon; alternative to elogind/logind. Very basic. Requires creation of run files by boot script.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8c30c40" class="outline-2">
+<h2 id="org8c30c40"><span class="section-number-2">29.</span> sys-block/io-scheduler-udev-rules</h2>
+<div class="outline-text-2" id="text-29">
+<ul class="org-ul">
+<li>Apparently reccomended for m.2 drives.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b1f59c" class="outline-2">
+<h2 id="org8b1f59c"><span class="section-number-2">30.</span> sys-boot/grub</h2>
+<div class="outline-text-2" id="text-30">
+<ul class="org-ul">
+<li>Boot manager.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd1fa9fd" class="outline-2">
+<h2 id="orgd1fa9fd"><span class="section-number-2">31.</span> sys-firmware/intel-microcode</h2>
+<div class="outline-text-2" id="text-31">
+<ul class="org-ul">
+<li>Microcode updates for Intel chips. Should be pulled into kernel by sys-kernel/installkernel.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87099ff" class="outline-2">
+<h2 id="org87099ff"><span class="section-number-2">32.</span> sys-firmware/sof-firmware</h2>
+<div class="outline-text-2" id="text-32">
+<ul class="org-ul">
+<li>Boutique/esoteric firmware, I believe. Emerged while trying to get pipewire to work.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org481e4bd" class="outline-2">
+<h2 id="org481e4bd"><span class="section-number-2">33.</span> sys-fs/dosfstools</h2>
+<div class="outline-text-2" id="text-33">
+<ul class="org-ul">
+<li>Support for vFAT FS.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc9a8d3e" class="outline-2">
+<h2 id="orgc9a8d3e"><span class="section-number-2">34.</span> sys-kernel/gentoo-sources</h2>
+<div class="outline-text-2" id="text-34">
+<ul class="org-ul">
+<li>Raw gentoo kernel sources.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga6925cf" class="outline-2">
+<h2 id="orga6925cf"><span class="section-number-2">35.</span> sys-kernel/installkernel</h2>
+<div class="outline-text-2" id="text-35">
+<ul class="org-ul">
+<li>Adds `make install` script for gentoo sources. Configs grub and intel-microcode.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org27f4160" class="outline-2">
+<h2 id="org27f4160"><span class="section-number-2">36.</span> sys-kernel/linux-firmware</h2>
+<div class="outline-text-2" id="text-36">
+<ul class="org-ul">
+<li>General firmware bundle.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga269ec4" class="outline-2">
+<h2 id="orga269ec4"><span class="section-number-2">37.</span> virtual/opengl</h2>
+<div class="outline-text-2" id="text-37">
+<ul class="org-ul">
+<li>Needed for libGL.so for compiling looking-glass.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2ae286b" class="outline-2">
+<h2 id="org2ae286b"><span class="section-number-2">38.</span> x11-libs/libdrm</h2>
+<div class="outline-text-2" id="text-38">
+<ul class="org-ul">
+<li>Probably looking-glass, IDK.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5ce551e" class="outline-2">
+<h2 id="org5ce551e"><span class="section-number-2">39.</span> x11-terms/kitty</h2>
+<div class="outline-text-2" id="text-39">
+<ul class="org-ul">
+<li>Decent terminal emulator, open to change.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2026-02-15 Sun 14:11</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

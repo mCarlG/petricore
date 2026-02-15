@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       7d8cd56e-defe-4cca-b3fa-30650e66e480
+:END:
+#+title: Guru
+#+tags: :gentoo:overlay:
+
+Ebuild repo maintained by Gentoo users.

@@ -1,0 +1,56 @@
+:PROPERTIES:
+:ID:       d6890f70-ff63-4be5-85df-0b05edbf6b74
+:END:
+#+title: Starlink Security Posture
+#+tags: :wip:reference:
+
+2022 - BlackHat presentation by Wouters demonstrates hardware vulnerability in Starlink through modchip.
+Glitching attack, small EMP/voltage spike to skip instructions.
+
+[ SoC Root of Trust ]
+-----------------------------------------------
+
+---------------------------------
+[ BSEC peripheral (eFuses) ]
+Root of Trust public key
+security state
+rma (Return Merchandise Authorization) state (Open/Dev -> Prod -> RMA/servicing -> Bricked)
+rollback counters (incremental counters to prevent device rollback)
+Luks keys (Disk Encryption)
+---------------------------------
+
+---------------------------------
+[ ROM Bootloader ]
+immutable
+loads and verifies BL2
+Uses internal SRAM
+---------------------------------
+
+-----------------------------------------------
+
+^
+|    [ ST Mini Certificate ]
+|    Rollback Counters
+|    ED25519 sig with SHA512 of signed data
+
+------------------------------------------------
+[ eMMC ]
+BL2 (Trusted boot firmware)
+BL31 (Secure world runtime firmware)
+BL33 (U-Boot)
+Flattened uImage Tree (FIT)
+SpaceX Runtime (dm-verity)
+Calibration/EDR/...(dm-verity/LUKS)
+------------------------------------------------
+
+1. BL1 loads BL2 certificate from eMMC
+2. BL1 verifies certificate sig
+3. BL1 loads the BL2 firmware from eMMC
+4. BL1 verifies that SHA512(BL2) matches the hash contained in the certificate
+
+ROM bootloader mapped at 0x30000000 and readable from BL2
+BSEC eFuses mapped at 0x22400000 (shadow registers)
+
+All interesting comms over mutually authed TLS (STSAFE)
+
+Quad Cortex-A53
