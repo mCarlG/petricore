@@ -1,8 +1,8 @@
 :PROPERTIES:
 :ID:       7e6002a1-bcad-408d-9811-011d4231d033
 :END:
-#+title: Secure Boot Protections
-#+tags: :wip:reference:
+#+TITLE: Secure Boot Protections
+#+FILETAGS: :wip:reference:coding:
 
 Methods:
 dm-verity

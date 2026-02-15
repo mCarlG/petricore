@@ -1,8 +1,8 @@
 :PROPERTIES:
 :ID:       15807a2a-300b-4894-9bbd-7bc131252439
 :END:
-#+title: Configuration Files
-#+tags: :wip:reference:gentoo:config:
+#+TITLE: Configuration Files
+#+FILETAGS: :wip:reference:gentoo:
 
 `/etc/init.d/hugepages`
 - openrc script to allocate and mount hugepages for qemu

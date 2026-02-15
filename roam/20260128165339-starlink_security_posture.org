@@ -1,8 +1,8 @@
 :PROPERTIES:
 :ID:       d6890f70-ff63-4be5-85df-0b05edbf6b74
 :END:
-#+title: Starlink Security Posture
-#+tags: :wip:reference:
+#+TITLE: Starlink Security Posture
+#+FILETAGS: :wip:reference:
 
 2022 - BlackHat presentation by Wouters demonstrates hardware vulnerability in Starlink through modchip.
 Glitching attack, small EMP/voltage spike to skip instructions.

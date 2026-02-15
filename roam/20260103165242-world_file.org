@@ -1,7 +1,8 @@
 :PROPERTIES:
 :ID:       8f054cea-0425-4a98-bf1b-d5bb60bd9e12
 :END:
-#+title: World File
+#+TITLE: World File
+#+FILETAGS: :stable:decision:gentoo:
 
 Programs explicitly emerged via portage.
 
