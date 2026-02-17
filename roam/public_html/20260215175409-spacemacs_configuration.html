@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2026-02-17 Tue 15:38 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SpacEmacs Configuration</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/css/custom.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav><a href="/"><- home</a></nav>
+</div>
+<div id="content" class="content">
+<header>
+<h1 class="title">SpacEmacs Configuration</h1>
+</header><p>
+Currently, I'm using this as my userconfig. I've been thinking about whether I
+could use other files to improve modularity, but this works for now.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">dotspacemacs/user-config</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #bc6ec5;">(</span>setq org-roam-directory <span style="color: #2d9574;">"~/Notes/roam/"</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>setq org-roam-db-autosync-mode t<span style="color: #bc6ec5;">)</span>
+
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">require</span> '<span style="color: #a45bad;">ox-publish</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>setq org-html-head <span style="color: #2d9574;">"&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"/css/custom.css\" /&gt;"</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>setq org-publish-project-alist
+        '<span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span><span style="color: #2d9574;">"org-roam-notes"</span>
+           <span style="color: #4f97d7;">:base-directory</span> <span style="color: #2d9574;">"~/Notes/roam/"</span>
+           <span style="color: #4f97d7;">:base-extension</span> <span style="color: #2d9574;">"org"</span>
+           <span style="color: #4f97d7;">:publishing-directory</span> <span style="color: #2d9574;">"~/Notes/roam/public_html"</span>
+           <span style="color: #4f97d7;">:publishing-function</span> org-html-publish-to-html
+           <span style="color: #4f97d7;">:recursive</span> t
+           <span style="color: #4f97d7;">:html-doctype</span> <span style="color: #2d9574;">"html5"</span>
+           <span style="color: #4f97d7;">:html-html5-fancy</span> t
+           <span style="color: #4f97d7;">:html-preamble</span> <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> <span style="color: #4f97d7;">(</span>plist<span style="color: #4f97d7;">)</span>
+                            <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">unless</span> <span style="color: #bc6ec5;">(</span>string-match-p <span style="color: #2d9574;">"index\\.html$"</span>
+                                                    <span style="color: #2d9574;">(</span>plist-get plist <span style="color: #4f97d7;">:output-file</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+                              <span style="color: #2d9574;">"&lt;nav&gt;&lt;a href=\"/\"&gt;&lt;- home&lt;/a&gt;&lt;/nav&gt;"</span><span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span>
+           <span style="color: #4f97d7;">:html-postamble</span> nil
+           <span style="color: #4f97d7;">:with-toc</span> nil
+           <span style="color: #4f97d7;">:section-numbers</span> nil
+           <span style="color: #4f97d7;">:with-author</span> nil
+           <span style="color: #4f97d7;">:with-creator</span> nil
+           <span style="color: #4f97d7;">:with-date</span> nil
+           <span style="color: #4f97d7;">:html-head-include-default-style</span> nil
+           <span style="color: #4f97d7;">:html-head-include-scripts</span> nil<span style="color: #67b11d;">)</span>
+
+          <span style="color: #67b11d;">(</span><span style="color: #2d9574;">"org-roam-static"</span>
+           <span style="color: #4f97d7;">:base-directory</span> <span style="color: #2d9574;">"~/Notes/roam/public_html/"</span>
+           <span style="color: #4f97d7;">:base-extension</span> <span style="color: #2d9574;">"css\\|ttf\\|otf\\|woff\\|woff2"</span>
+           <span style="color: #4f97d7;">:publishing-directory</span> <span style="color: #2d9574;">"~/Notes/roam/public_html"</span>
+           <span style="color: #4f97d7;">:publishing-function</span> org-publish-attachment
+           <span style="color: #4f97d7;">:recursive</span> t<span style="color: #67b11d;">)</span>
+
+          <span style="color: #67b11d;">(</span><span style="color: #2d9574;">"org-roam"</span> <span style="color: #4f97d7;">:components</span> <span style="color: #b1951d;">(</span><span style="color: #2d9574;">"org-roam-notes"</span> <span style="color: #2d9574;">"org-roam-static"</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+
+  <span style="color: #bc6ec5;">(</span>set-language-environment <span style="color: #2d9574;">"UTF-8"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+It's only really setting up two things: org-roam and org-publish.
+</p>
+
+<p>
+Pretty clear that this is just setting the home directory and enabling
+autosyncing the db:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #4f97d7;">(</span>setq org-roam-directory <span style="color: #2d9574;">"~/Notes/roam/"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>setq org-roam-db-autosync-mode t<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</body>
+</html>

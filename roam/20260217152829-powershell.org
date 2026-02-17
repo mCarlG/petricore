@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       b0f15566-af50-4e78-adce-2d25bf90a911
+:END:
+#+TITLE: Powershell
+#+FILETAGS: :wip:coding:
+
+* Querying
+- `Get-ItemProperty`
+
+* Processing
+
+* Supplying
+

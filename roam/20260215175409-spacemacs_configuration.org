@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       41625b36-8a8d-47c4-b500-4382961403fd
+:END:
+#+TITLE: SpacEmacs Configuration
+#+FILETAGS: :wip:decision:
+
+Currently, I'm using this as my userconfig. I've been thinking about whether I
+could use other files to improve modularity, but this works for now.
+
+#+BEGIN_SRC lisp
+(defun dotspacemacs/user-config ()
+  (setq org-roam-directory "~/Notes/roam/")
+  (setq org-roam-db-autosync-mode t)
+
+  (require 'ox-publish)
+  (setq org-html-head "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/custom.css\" />")
+  (setq org-publish-project-alist
+        '(("org-roam-notes"
+           :base-directory "~/Notes/roam/"
+           :base-extension "org"
+           :publishing-directory "~/Notes/roam/public_html"
+           :publishing-function org-html-publish-to-html
+           :recursive t
+           :html-doctype "html5"
+           :html-html5-fancy t
+           :html-preamble (lambda (plist)
+                            (unless (string-match-p "index\\.html$"
+                                                    (plist-get plist :output-file))
+                              "<nav><a href=\"/\"><- home</a></nav>"))
+           :html-postamble nil
+           :with-toc nil
+           :section-numbers nil
+           :with-author nil
+           :with-creator nil
+           :with-date nil
+           :html-head-include-default-style nil
+           :html-head-include-scripts nil)
+
+          ("org-roam-static"
+           :base-directory "~/Notes/roam/public_html/"
+           :base-extension "css\\|ttf\\|otf\\|woff\\|woff2"
+           :publishing-directory "~/Notes/roam/public_html"
+           :publishing-function org-publish-attachment
+           :recursive t)
+
+          ("org-roam" :components ("org-roam-notes" "org-roam-static"))))
+
+  (set-language-environment "UTF-8"))
+#+END_SRC
+
+It's only really setting up two things: org-roam and org-publish.
+
+Pretty clear that this is just setting the home directory and enabling
+autosyncing the db:
+
+#+BEGIN_SRC lisp
+(setq org-roam-directory "~/Notes/roam/")
+(setq org-roam-db-autosync-mode t)
+#+END_SRC
