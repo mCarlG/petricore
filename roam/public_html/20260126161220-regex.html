@@ -1,44 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-02-15 Sun 17:45 -->
+<!-- 2026-02-17 Tue 15:57 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Regex</title>
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" type="text/css" href="/css/custom.css" />
-<script>
-  window.MathJax = {
-    tex: {
-      ams: {
-        multlineWidth: '85%'
-      },
-      tags: 'ams',
-      tagSide: 'right',
-      tagIndent: '.8em'
-    },
-    chtml: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    svg: {
-      scale: 1.0,
-      displayAlign: 'center',
-      displayIndent: '0em'
-    },
-    output: {
-      font: 'mathjax-modern',
-      displayOverflow: 'overflow'
-    }
-  };
-</script>
-
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -47,64 +15,89 @@
 <div id="content" class="content">
 <header>
 <h1 class="title">Regex</h1>
-</header><p>
+</header><div id="outline-container-org0abe99d" class="outline-2">
+<h2 id="org0abe99d">Choice information</h2>
+<div class="outline-text-2" id="text-org0abe99d">
+<p>
 Regex will arbitrarily match pattern in a line unless pinned to a location.
-Any meta-character to be used literally must be escaped with a '\' prepending it.
+Any meta-character to be used literally must be escaped with a <code>\</code> prepending it.
 Generally find what excludes the bad case.
 </p>
 
 <p>
 Groups can be nested.
-Groups will only capture what is enclosed in '()'.
-Groups can typically be referenced with '\\d+' (like '\0' or '\1').
-Groups are referenced from '\1' onwards; '\0' is the whole matched string.
+Groups will only capture what is enclosed in <code>()</code>.
+Groups can typically be referenced with <code>\\d+</code> (like <code>\0</code> or <code>\1</code>).
+Groups are referenced from <code>\1</code> onwards; <code>\0</code> is the whole matched string.
 </p>
 
 <p>
-'|' can decide what to OR a little arbitrarily. Maybe on whitespace as well as group?
-All set matchers (like '\d') can be inversed through capitalization.
+<code>|</code> can decide what to OR a little arbitrarily. Maybe on whitespace as well as group?
+All set matchers (like <code>\d</code>) can be inversed through capitalization.
 </p>
 
 <p>
-Flags can be combined like '(?im)'.
+Flags can be combined like <code>(?im)</code>.
 </p>
-
-<p>
-'\d' will match any digit [0-9].
-'\w' will match any alphanumeric [A-Za-z0-9_].
-'\s' will match any whitespace.
-</p>
-
-<p>
-'[]' encapsulating a collection of characters indicates an OR.
-'-' can be used inside '[]' to indicate a sequential range of values to be represented.
-'{}' can be appended to a character to indicate number of instances to match.
-',' can be used in some engines inside '{}' to designate a range.
-'()' will capture characters match in a group for later use.
-'?:' inside '()' will result in a non-capturing group.
-</p>
-
-<p>
-'^' is a meta-character IN '[] for NOT.
-'^' is a meta-character OUTSIDE of '[] for start of line.
-'$' is a meta-character for end of line.
-'\b' is a boundary between alphanumeric and non-alphanumeric character.
-</p>
-
-<p>
-'.' is a meta-character for literally anything.
-'<b>' is a meta-character for 0 or more matches.
-'+' is a meta-character for 1 or more matches.
-'?' after QUANTIER ('</b>', '+','{,}') is a meta-character for laziness.
-'?' after REGULAR CHARACTER/TOKEN is a meta-character for optionality.
-'|' indicates an OR for the whole sequence.
-</p>
-
-<p>
-'(?i)' flag for case-insensitive.
-'(?m)' flag for multiline (^ and $ match line boundaries).
-'(?s)' flag for dotall, making '.' match newlines.
-</p>
+</div>
+</div>
+<div id="outline-container-org80f6b71" class="outline-2">
+<h2 id="org80f6b71">Sets</h2>
+<div class="outline-text-2" id="text-org80f6b71">
+<ul class="org-ul">
+<li><code>\d</code> will match any digit [0-9].</li>
+<li><code>\w</code> will match any alphanumeric [A-Za-z0-9_].</li>
+<li><code>\s</code> will match any whitespace.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org47a1083" class="outline-2">
+<h2 id="org47a1083">Globbing</h2>
+<div class="outline-text-2" id="text-org47a1083">
+<ul class="org-ul">
+<li><code>[]</code> encapsulating a collection of characters indicates an OR.</li>
+<li><code>-</code> can be used inside <code>[]</code> to indicate a sequential range of values to be represented.</li>
+<li><code>{}</code> can be appended to a character to indicate number of instances to match.</li>
+<li><code>,</code> can be used in some engines inside <code>{}</code> to designate a range.</li>
+<li><code>()</code> will capture characters match in a group for later use.</li>
+<li><code>?:</code> inside <code>()</code> will result in a non-capturing group.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge2db023" class="outline-2">
+<h2 id="orge2db023">Pinning</h2>
+<div class="outline-text-2" id="text-orge2db023">
+<ul class="org-ul">
+<li><code>^</code> is a meta-character IN =[] for NOT.</li>
+<li><code>^</code> is a meta-character OUTSIDE of =[] for start of line.</li>
+<li><code>$</code> is a meta-character for end of line.</li>
+<li><code>\b</code> is a boundary between alphanumeric and non-alphanumeric character.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org81e1af0" class="outline-2">
+<h2 id="org81e1af0">Matching</h2>
+<div class="outline-text-2" id="text-org81e1af0">
+<ul class="org-ul">
+<li><code>.</code> is a meta-character for literally anything.</li>
+<li><code>*</code> is a meta-character for 0 or more matches.</li>
+<li><code>+</code> is a meta-character for 1 or more matches.</li>
+<li><code>?</code> after QUANTIER (<code>*</code>, <code>+</code>, <code>{d+,d+}</code>) is a meta-character for laziness.</li>
+<li><code>?</code> after REGULAR CHARACTER/TOKEN is a meta-character for optionality.</li>
+<li><code>|</code> indicates an OR for the whole sequence.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org864b8a0" class="outline-2">
+<h2 id="org864b8a0">Flags</h2>
+<div class="outline-text-2" id="text-org864b8a0">
+<ul class="org-ul">
+<li><code>(?i)</code> flag for case-insensitive.</li>
+<li><code>(?m)</code> flag for multiline (^ and $ match line boundaries).</li>
+<li><code>(?s)</code> flag for dotall, making <code>.</code> match newlines.</li>
+</ul>
+</div>
+</div>
 </div>
 </body>
 </html>

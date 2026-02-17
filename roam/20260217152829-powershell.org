@@ -6,11 +6,6 @@
 
 * Querying
 - =Get-ItemProperty=
-- src_ps1{Get-ItemProperty}
-- src_powershell{Get-ItemProperty}
-#+BEGIN_SRC ps1
-Get-ItemProperty
-#+END_SRC
 
 * Processing
 
