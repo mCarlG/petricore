@@ -11,7 +11,7 @@ Generally find what excludes the bad case.
 
 Groups can be nested.
 Groups will only capture what is enclosed in =()=.
-Groups can typically be referenced with =\\d+= (like =\0= or =\1=).
+Groups can typically be referenced with =\{some_num}= (like =\0= or =\1=).
 Groups are referenced from =\1= onwards; =\0= is the whole matched string.
 
 =|= can decide what to OR a little arbitrarily. Maybe on whitespace as well as group?
@@ -39,7 +39,7 @@ Flags can be combined like =(?im)=.
 - =\b= is a boundary between alphanumeric and non-alphanumeric character.
 
 * Matching
-- =.= is a meta-character for literally anything.
+- =.= is a meta-character for literally anything (including =\n= with =(?s)=).
 - =*= is a meta-character for 0 or more matches.
 - =+= is a meta-character for 1 or more matches.
 - =?= after QUANTIER (=*=, =+=, ={d+,d+}=) is a meta-character for laziness.

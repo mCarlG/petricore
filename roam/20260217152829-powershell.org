@@ -5,7 +5,10 @@
 #+FILETAGS: :wip:coding:
 
 * Querying
-- =Get-ItemProperty=
+** =Get-ItemProperty=
+ - For paths: Gets information about the directory.
+ - For files: Retrieves properties of the file.
+ - For registry entries: Value names and data of registry entries.
 
 * Processing
 

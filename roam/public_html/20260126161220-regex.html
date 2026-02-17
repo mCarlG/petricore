@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-02-17 Tue 16:02 -->
+<!-- 2026-02-17 Tue 16:35 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Regex</title>
@@ -27,7 +27,7 @@ Generally find what excludes the bad case.
 <p>
 Groups can be nested.
 Groups will only capture what is enclosed in <code>()</code>.
-Groups can typically be referenced with <code>\\d+</code> (like <code>\0</code> or <code>\1</code>).
+Groups can typically be referenced with <code>\{some_num}</code> (like <code>\0</code> or <code>\1</code>).
 Groups are referenced from <code>\1</code> onwards; <code>\0</code> is the whole matched string.
 </p>
 
@@ -79,7 +79,7 @@ Flags can be combined like <code>(?im)</code>.
 <h2 id="org81e1af0">Matching</h2>
 <div class="outline-text-2" id="text-org81e1af0">
 <ul class="org-ul">
-<li><code>.</code> is a meta-character for literally anything.</li>
+<li><code>.</code> is a meta-character for literally anything (including <code>\n</code> with <code>(?s)</code>).</li>
 <li><code>*</code> is a meta-character for 0 or more matches.</li>
 <li><code>+</code> is a meta-character for 1 or more matches.</li>
 <li><code>?</code> after QUANTIER (<code>*</code>, <code>+</code>, <code>{d+,d+}</code>) is a meta-character for laziness.</li>
