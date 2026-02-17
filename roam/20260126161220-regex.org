@@ -2,7 +2,7 @@
 :ID:       0ff5258e-5735-4280-a224-a89e2fb47be6
 :END:
 #+TITLE: Regex
-#+FILETAGS: :wip:reference:coding:
+#+FILETAGS: :stable:reference:coding:
 
 * Choice information
 Regex will arbitrarily match pattern in a line unless pinned to a location.
@@ -26,15 +26,15 @@ Flags can be combined like =(?im)=.
 
 * Globbing
 - =[]= encapsulating a collection of characters indicates an OR.
-- =-= can be used inside =[]= to indicate a sequential range of values to be represented.
-- ={}= can be appended to a character to indicate number of instances to match.
-- =,= can be used in some engines inside ={}= to designate a range.
+- =-= can be used inside =[]= to indicate a sequential range of values to be represented: =[a-z]=.
+- ={}= can be appended to a character to indicate number of instances to match: ={4}=.
+- =,= can be used in some engines inside ={}= to designate a range: ={1,5}=.
 - =()= will capture characters match in a group for later use.
-- =?:= inside =()= will result in a non-capturing group.
+- =?:= inside =()= will result in a non-capturing group: =(?:.*)=.
 
 * Pinning
-- =^= is a meta-character IN =[] for NOT.
-- =^= is a meta-character OUTSIDE of =[] for start of line.
+- =^= is a meta-character IN =[]= for NOT.
+- =^= is a meta-character OUTSIDE of =[]= for start of line.
 - =$= is a meta-character for end of line.
 - =\b= is a boundary between alphanumeric and non-alphanumeric character.
 
@@ -48,5 +48,5 @@ Flags can be combined like =(?im)=.
 
 * Flags
 - =(?i)= flag for case-insensitive.
-- =(?m)= flag for multiline (^ and $ match line boundaries).
+- =(?m)= flag for multiline (=^= and =$= match line boundaries).
 - =(?s)= flag for dotall, making =.= match newlines.

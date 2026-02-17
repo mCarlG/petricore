@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2026-02-17 Tue 15:57 -->
+<!-- 2026-02-17 Tue 16:02 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Regex</title>
@@ -56,11 +56,11 @@ Flags can be combined like <code>(?im)</code>.
 <div class="outline-text-2" id="text-org47a1083">
 <ul class="org-ul">
 <li><code>[]</code> encapsulating a collection of characters indicates an OR.</li>
-<li><code>-</code> can be used inside <code>[]</code> to indicate a sequential range of values to be represented.</li>
-<li><code>{}</code> can be appended to a character to indicate number of instances to match.</li>
-<li><code>,</code> can be used in some engines inside <code>{}</code> to designate a range.</li>
+<li><code>-</code> can be used inside <code>[]</code> to indicate a sequential range of values to be represented: <code>[a-z]</code>.</li>
+<li><code>{}</code> can be appended to a character to indicate number of instances to match: <code>{4}</code>.</li>
+<li><code>,</code> can be used in some engines inside <code>{}</code> to designate a range: <code>{1,5}</code>.</li>
 <li><code>()</code> will capture characters match in a group for later use.</li>
-<li><code>?:</code> inside <code>()</code> will result in a non-capturing group.</li>
+<li><code>?:</code> inside <code>()</code> will result in a non-capturing group: <code>(?:.*)</code>.</li>
 </ul>
 </div>
 </div>
@@ -68,8 +68,8 @@ Flags can be combined like <code>(?im)</code>.
 <h2 id="orge2db023">Pinning</h2>
 <div class="outline-text-2" id="text-orge2db023">
 <ul class="org-ul">
-<li><code>^</code> is a meta-character IN =[] for NOT.</li>
-<li><code>^</code> is a meta-character OUTSIDE of =[] for start of line.</li>
+<li><code>^</code> is a meta-character IN <code>[]</code> for NOT.</li>
+<li><code>^</code> is a meta-character OUTSIDE of <code>[]</code> for start of line.</li>
 <li><code>$</code> is a meta-character for end of line.</li>
 <li><code>\b</code> is a boundary between alphanumeric and non-alphanumeric character.</li>
 </ul>
@@ -93,7 +93,7 @@ Flags can be combined like <code>(?im)</code>.
 <div class="outline-text-2" id="text-org864b8a0">
 <ul class="org-ul">
 <li><code>(?i)</code> flag for case-insensitive.</li>
-<li><code>(?m)</code> flag for multiline (^ and $ match line boundaries).</li>
+<li><code>(?m)</code> flag for multiline (<code>^</code> and <code>$</code> match line boundaries).</li>
 <li><code>(?s)</code> flag for dotall, making <code>.</code> match newlines.</li>
 </ul>
 </div>
