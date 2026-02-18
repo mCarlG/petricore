@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       c8e83f11-cda9-4c85-acdf-b790889686ee
+:END:
+#+TITLE: Powershell Path Type
+#+FILETAGS: :wip:coding:
+
+Used by [[id:7af73016-7f0a-4fc5-b0bc-7b69f48b5293][Powershell Test-Path]].
+
+* Types
+- =leaf= is used for files.
+- =container= is used for folders.
+- =any= can be used for both.

@@ -4,19 +4,11 @@
 #+TITLE: Powershell
 #+FILETAGS: :wip:coding:
 
-* Concepts
-- ~PathType~ : ~leaf~ is a file, a ~container~ is a folder, and ~any~ is either.
-
 * Querying
-** =Get-ItemProperty=
- - For paths: Gets information about the directory.
- - For files: Retrieves properties of the file.
- - For registry entries: Value names and data of registry entries.
+- [[id:eae8968a-890e-44a6-9310-6500491b6ac5][Powershell Get-ItemProperty]]
 
 * Processing
-** =Test-Path=
- - Check whether path exists.
- - ~PathType~ can be used to dictate type to check for.
+- [[id:7af73016-7f0a-4fc5-b0bc-7b69f48b5293][Powershell Test-Path]]
 
 * Supplying
 

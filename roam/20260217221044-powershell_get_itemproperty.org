@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       eae8968a-890e-44a6-9310-6500491b6ac5
+:END:
+#+TITLE: Powershell Get-ItemProperty
+#+FILETAGS: :wip:coding:
+
+ - For paths: Gets information about the directory.
+ - For files: Retrieves properties of the file.
+ - For registry entries: Value names and data of registry entries.

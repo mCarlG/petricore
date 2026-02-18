@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       7af73016-7f0a-4fc5-b0bc-7b69f48b5293
+:END:
+#+TITLE: Powershell Test-Path
+#+FILETAGS: :wip:coding:
+
+Determines whether all elements of a path exist.
+Returns =$true= if all exist, or =$false= if any are missing.
+Always returns =$false= on empty/whitespace string.
+
+Used with =LiteralPath= or default =Path=.
