@@ -13,11 +13,10 @@
 }
 
 :root {
-    --bg-primary: #0a0e14;
-    --bg-secondary: #131920;
-    --text-primary: #e6b673;
-    --text-secondary: #b8a482;
-    --accent: #59c2ff;
+    --bg-primary: #211509;
+    --bg-secondary: #BC8C5E;
+    --text-primary: #DEC1A3;
+    --accent: #FFF6E8;
     --border: #1f2937;
 }
 
