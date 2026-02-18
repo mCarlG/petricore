@@ -5,10 +5,10 @@
 #+FILETAGS: :wip:coding:
 
 * Querying
-- [[id:eae8968a-890e-44a6-9310-6500491b6ac5][Powershell Get-ItemProperty]]
+- [[id:eae8968a-890e-44a6-9310-6500491b6ac5][Get-ItemProperty]]
 
 * Processing
-- [[id:7af73016-7f0a-4fc5-b0bc-7b69f48b5293][Powershell Test-Path]]
+- [[id:7af73016-7f0a-4fc5-b0bc-7b69f48b5293][Test-Path]]
 
 * Supplying
 
